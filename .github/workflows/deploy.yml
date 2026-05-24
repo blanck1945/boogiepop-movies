@@ -9,7 +9,7 @@ env:
   ECR_REGISTRY: 653876198281.dkr.ecr.us-east-1.amazonaws.com
   ECR_REPOSITORY: boogiepop-movie-rating
   ECS_CLUSTER: boogiepop-api-cluster
-  ECS_SERVICE: boogiepop-fe-movie-rating-svc
+  ECS_SERVICE: boogiepop-api-fe-movie-rating-svc
 
 jobs:
   build-and-deploy:
