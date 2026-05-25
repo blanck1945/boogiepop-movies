@@ -3,8 +3,8 @@
 ARG NODE_VERSION=22
 FROM node:${NODE_VERSION}-alpine AS deps
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package*.json ./
+RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
 FROM deps AS builder
 WORKDIR /app
