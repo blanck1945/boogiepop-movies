@@ -1,4 +1,4 @@
-import { getRatings } from '../lib/s3'
+import { getRatings, type RatingsStore } from '../lib/s3'
 import MovieCard from './MovieCard'
 
 const MOVIES = [
@@ -15,7 +15,7 @@ const MOVIES = [
 export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
-  const store = await getRatings().catch(() => ({}))
+  const store: RatingsStore = await getRatings().catch(() => ({} as RatingsStore))
   const bucket = process.env.MOVIE_RATING_S3_BUCKET?.trim() || ''
   const region = process.env.AWS_REGION?.trim() || 'us-east-1'
 
