@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getRatings, saveRatings } from '../../../../lib/s3'
+import { getRatings, saveRatings } from '../../../lib/s3'
 
 export async function GET() {
   const store = await getRatings()
