@@ -14,7 +14,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ARG NEXT_BASE_PATH=/movie-rating
 ENV NEXT_BASE_PATH=${NEXT_BASE_PATH}
 
-RUN npm run build
+RUN npm run build && mkdir -p /app/public
 
 FROM node:${NODE_VERSION}-alpine AS runner
 WORKDIR /app
